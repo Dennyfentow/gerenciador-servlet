@@ -13,15 +13,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet Filter implementation class AutorizacaoFilter
- */
+
 //@WebFilter("/entrada")
-public class AutorizacaoFilter extends HttpFilter implements Filter {
-       
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
+public class AutorizacaoFilter implements Filter {
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+	}
+	
+	@Override
+	public void destroy() {}
+	
+	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 		System.out.println("AutorizacaoFilter");
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
