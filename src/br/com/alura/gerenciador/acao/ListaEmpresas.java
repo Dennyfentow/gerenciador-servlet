@@ -13,13 +13,7 @@ import br.com.alura.gerenciador.modelo.Empresa;
 
 public class ListaEmpresas implements Acao{
 	
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		HttpSession session = request.getSession();
-		
-		if(session.getAttribute("usuarioLogado") == null) {
-			return "redirect:entrada?acao=LoginForm";
-		}
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		
 		
 		System.out.println("listando empresas");
@@ -29,6 +23,7 @@ public class ListaEmpresas implements Acao{
 		
 		request.setAttribute("empresas", lista);
 		
+
 		return "forward:listaEmpresas.jsp";
 	}
 
